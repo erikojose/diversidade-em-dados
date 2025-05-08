@@ -3,59 +3,53 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
+  padding: 40px;
+  background: #f5f7fa;
+  color: #1f2937;
 }
 
 .container {
   max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2, h3 {
-  color: #004080;
+  margin: auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
 h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #004080;
-  padding-bottom: 10px;
+  font-size: 2.5em;
+  color: #003366;
+  margin-bottom: 10px;
 }
 
-section {
+p {
+  font-size: 18px;
+  color: #4b5563;
+  line-height: 1.6;
   margin-bottom: 30px;
 }
 
-a {
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.tag {
+a.button {
   display: inline-block;
-  background-color: #e0e0e0;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.85em;
-  margin-right: 5px;
+  padding: 14px 30px;
+  background-color: #eb5e28; /* tom laranja da logo */
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-footer {
-  text-align: center;
-  font-size: 0.9em;
-  color: #666;
-  margin-top: 50px;
+a.button:hover {
+  background-color: #c1410d;
+}
+
+img {
+  margin-top: 40px;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 }
