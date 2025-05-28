@@ -6,6 +6,7 @@
   <title>Observatório da Diversidade no Serviço Público</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 </head>
 <body>
   <header>
@@ -87,9 +88,15 @@
         responsive: true,
         plugins: {
           legend: { position: 'bottom' },
-          title: { display: true, text: 'Distribuição de Gênero' }
+          title: { display: true, text: 'Distribuição de Gênero' },
+          datalabels: {
+            formatter: (value, context) => value + '%',
+            color: '#000',
+            font: { weight: 'bold' }
+          }
         }
-      }
+      },
+      plugins: [ChartDataLabels]
     });
 
     const ctxRaca = document.getElementById('graficoRaca');
@@ -106,9 +113,15 @@
         responsive: true,
         plugins: {
           legend: { position: 'bottom' },
-          title: { display: true, text: 'Distribuição por Cor/Raça' }
+          title: { display: true, text: 'Distribuição por Cor/Raça' },
+          datalabels: {
+            formatter: (value, context) => value + '%',
+            color: '#000',
+            font: { weight: 'bold' }
+          }
         }
-      }
+      },
+      plugins: [ChartDataLabels]
     });
   </script>
 </body>
