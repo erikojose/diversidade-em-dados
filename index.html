@@ -1,24 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diversidade em Dados</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatório da Diversidade no Serviço Público</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Diversidade em Dados</h1>
-        <p>
-            Projeto para o concurso REDATA da CGU.<br>
-            Análise da inclusão e diversidade racial e de gênero no serviço público brasileiro.
-        </p>
-        <a class="button" href="Projeto_REDATA_Inclusao_e_Diversidade_no_Servico_Publico.pdf" target="_blank">
-            📄 Baixar Proposta (PDF)
-        </a>
-        <div>
-            <img src="logo_diversidade_em_dados.png" alt="Logo Diversidade em Dados">
-        </div>
-    </div>
+  <header>
+    <h1>Observatório da Diversidade no Serviço Público</h1>
+    <p>Análise da presença de grupos minorizados nos quadros do funcionalismo público</p>
+  </header>
+
+  <main>
+    <section class="painel">
+      <h2>Presença de Gênero</h2>
+      <canvas id="graficoGenero"></canvas>
+      <p class="fonte">Fonte: Painel Estatístico de Pessoal - MPO</p>
+    </section>
+
+    <section class="painel">
+      <h2>Presença por Cor/Raça</h2>
+      <canvas id="graficoRaca"></canvas>
+      <p class="fonte">Fonte: Painel Estatístico de Pessoal - MPO</p>
+    </section>
+
+    <section>
+      <h2>Download do Relatório</h2>
+      <a href="Projeto_REDATA_Diversidade_em_Dados_FINAL.pdf" target="_blank" class="botao">📄 Baixar PDF Completo</a>
+    </section>
+  </main>
+
+  <footer>
+    Desenvolvido por Erik José | Concurso REDATA 2025 - CGU
+  </footer>
+
+  <script>
+    const ctxGenero = document.getElementById('graficoGenero');
+    const graficoGenero = new Chart(ctxGenero, {
+      type: 'pie',
+      data: {
+        labels: ['Masculino', 'Feminino'],
+        datasets: [{
+          data: [58, 42],
+          backgroundColor: ['#3b82f6', '#ef4444']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' },
+          title: { display: true, text: 'Distribuição de Gênero' }
+        }
+      }
+    });
+
+    const ctxRaca = document.getElementById('graficoRaca');
+    const graficoRaca = new Chart(ctxRaca, {
+      type: 'pie',
+      data: {
+        labels: ['Branca', 'Negra', 'Não Informado', 'Amarela', 'Indígena'],
+        datasets: [{
+          data: [51, 33, 14, 2, 0],
+          backgroundColor: ['#60a5fa', '#fb923c', '#9ca3af', '#facc15', '#10b981']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' },
+          title: { display: true, text: 'Distribuição por Cor/Raça' }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
